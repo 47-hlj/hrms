@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost_3306
+ Source Server         : 47HLJ
  Source Server Type    : MySQL
- Source Server Version : 80017
+ Source Server Version : 80018
  Source Host           : localhost:3306
  Source Schema         : hrms
 
  Target Server Type    : MySQL
- Target Server Version : 80017
+ Target Server Version : 80018
  File Encoding         : 65001
 
- Date: 30/05/2020 10:02:10
+ Date: 04/06/2021 18:14:48
 */
 
 SET NAMES utf8mb4;
@@ -31,13 +31,13 @@ CREATE TABLE `appraise`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `eid`(`eid`) USING BTREE,
   CONSTRAINT `appraise_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `emp` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '评估' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '评估' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of appraise
 -- ----------------------------
 INSERT INTO `appraise` VALUES (1, 1, '2018-08-07', '优', '', '');
-INSERT INTO `appraise` VALUES (2, 4, '2018-08-07', '良', '', '');
+INSERT INTO `appraise` VALUES (2, 16, '2018-08-07', '良', '', '');
 
 -- ----------------------------
 -- Table structure for contract
@@ -53,7 +53,7 @@ CREATE TABLE `contract`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `workID`(`workID`) USING BTREE,
   CONSTRAINT `contract_ibfk_1` FOREIGN KEY (`workID`) REFERENCES `emp` (`workID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '合同' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '合同' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of contract
@@ -70,7 +70,7 @@ CREATE TABLE `dept`  (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '名称',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '部门' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '部门' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dept
@@ -120,12 +120,12 @@ CREATE TABLE `emp`  (
   CONSTRAINT `emp_ibfk_1` FOREIGN KEY (`nationId`) REFERENCES `nation` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `emp_ibfk_2` FOREIGN KEY (`deptId`) REFERENCES `dept` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `emp_ibfk_3` FOREIGN KEY (`posId`) REFERENCES `position` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of emp
 -- ----------------------------
-INSERT INTO `emp` VALUES (1, '张三', 35, '男', '1985-07-08', '456321754215896354', '已婚', 1, '湖南', 'zhangsan@163.com', '17452135841', 'dsadsfvgbnh', 1, 1, '博士', '湘潭大学', '2010-07-01', '在职', 'sdf4215', NULL, NULL, NULL);
+INSERT INTO `emp` VALUES (1, '张三', 35, '男', '1985-07-08', '456321754215896354', '已婚', 1, '湖南', 'zhangsan@163.com', '17452135841', 'dsadsfvgbnh', 1, 17, '博士', '南昌大学', '2010-07-01', '在职', 'sdf4215', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (2, '李四', 36, '男', '1984-04-06', '489653214754123586', '已婚', 1, '湖北', 'lisi@163.com', '13564721547', 'cwdhetdm', 1, 1, '博士', '', NULL, '在职', 'sdf7425', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (3, '张强', 28, '男', '1993-08-05', '542135874521578945', '已婚', 1, '江苏', 'zhangqiang@163.com', '14785426357', 'xxxxxxxxxxxxxxx', 3, 12, '博士', '', NULL, '在职', 'sdf5437', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (4, '李宇', 28, '男', '1992-04-09', '', '已婚', 1, '', '', '17548963254', 'xxxxxxxxx', 3, 3, '博士', '', NULL, '在职', 'sdf8452', NULL, NULL, NULL);
@@ -136,8 +136,9 @@ INSERT INTO `emp` VALUES (8, '邹好', 26, '女', '1994-06-04', '', '已婚', 1,
 INSERT INTO `emp` VALUES (9, '李韵', 34, '男', '1986-03-16', '', '已婚', 1, '', '', '14523147852', 'wsdfgefv', 1, 3, '博士', '', NULL, '在职', 'sdf5780', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (10, '王桂芳', 39, '女', '1981-06-05', '', '已婚', 1, '', '', '18452369785', 'wsdfvvefvcs', 2, 8, '大专', '', NULL, '在职', 'sdf3456', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (11, '洪强国', 43, '男', '1977-09-26', '', '已婚', 1, '', '', '15236987452', 'dfnxv4rt', 7, 21, '大专', '', NULL, '在职', 'sdf5221', NULL, NULL, NULL);
-INSERT INTO `emp` VALUES (13, '刘安福', 45, '男', '1975-08-06', '', '已婚', 1, '', '', '15236984521', 'sdg7hhbb', 1, 1, '大专', '', NULL, '在职', 'sdf7894', NULL, NULL, NULL);
 INSERT INTO `emp` VALUES (14, '李芳', 27, '女', '1993-02-04', '', '已婚', 1, '', '', '15423578541', 'sdfebe', 2, 10, '本科', '', NULL, '在职', 'sdf7854', NULL, NULL, NULL);
+INSERT INTO `emp` VALUES (16, '胡李江', 22, '男', '1999-10-17', '360313199910172532', '未婚', 1, '江西', '1725816370@qq.com', '15079976487', '江西省南昌市红谷滩新区学府大道999号南昌大学前湖校区', 1, 1, '本科', '南昌大学', '2021-03-20', '在职', '47Gamer', '2021-04-20', 1, NULL);
+INSERT INTO `emp` VALUES (19, '胡李江1', 22, '男', '1999-10-17', '360313199910172532', '已婚', 1, '江西', '1725816370@qq.com', '15079976487', '学府大道999号南昌大学前湖校区天健园27幢', 2, 10, '博士', '南昌大学', '2021-03-20', '在职', '47Gamer', '2021-04-20', 1, NULL);
 
 -- ----------------------------
 -- Table structure for emprp
@@ -154,13 +155,14 @@ CREATE TABLE `emprp`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `eid`(`eid`) USING BTREE,
   CONSTRAINT `emprp_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `emp` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工奖惩情况' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工奖惩情况' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of emprp
 -- ----------------------------
 INSERT INTO `emprp` VALUES (1, 1, '2018-09-08', '罚', '迟到', 95, '');
 INSERT INTO `emprp` VALUES (3, 2, '2019-07-06', '罚', '早退', 95, '');
+INSERT INTO `emprp` VALUES (4, 1, '2021-04-27', '罚', '玩手机', 90, '');
 
 -- ----------------------------
 -- Table structure for empsalary
@@ -176,7 +178,7 @@ CREATE TABLE `empsalary`  (
   INDEX `empsalary_ibfk_2`(`sid`) USING BTREE,
   CONSTRAINT `empsalary_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `emp` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `empsalary_ibfk_2` FOREIGN KEY (`sid`) REFERENCES `salary` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工工资' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工工资' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of empsalary
@@ -198,13 +200,33 @@ CREATE TABLE `emptrain`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `pid`(`eid`) USING BTREE,
   CONSTRAINT `employeetrain_ibfk_1` FOREIGN KEY (`eid`) REFERENCES `emp` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工培训' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '员工培训' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of emptrain
 -- ----------------------------
 INSERT INTO `emptrain` VALUES (1, 1, '2017-08-05', 'xxxxx', '');
 INSERT INTO `emptrain` VALUES (3, 4, '2018-09-04', 'xxxxxxx', '');
+
+-- ----------------------------
+-- Table structure for emptransfer
+-- ----------------------------
+DROP TABLE IF EXISTS `emptransfer`;
+CREATE TABLE `emptransfer`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `dept` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `date` date NULL DEFAULT NULL,
+  `reason` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of emptransfer
+-- ----------------------------
+INSERT INTO `emptransfer` VALUES (1, '胡李江', '行政部', '行政总监', '2021-06-05', '离职');
+INSERT INTO `emptransfer` VALUES (2, '胡李江1', '研发部', '研发总监', '2021-06-05', '升职');
 
 -- ----------------------------
 -- Table structure for nation
@@ -214,7 +236,7 @@ CREATE TABLE `nation`  (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '民族' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '民族' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of nation
@@ -288,7 +310,7 @@ CREATE TABLE `position`  (
   UNIQUE INDEX `name`(`name`) USING BTREE,
   INDEX `pos_ibfk_1`(`did`) USING BTREE,
   CONSTRAINT `pos_ibfk_1` FOREIGN KEY (`did`) REFERENCES `dept` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '职位' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '职位' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of position
@@ -316,6 +338,7 @@ INSERT INTO `position` VALUES (20, '营运总监助理', 5);
 INSERT INTO `position` VALUES (21, '营运经理', 5);
 INSERT INTO `position` VALUES (22, '市场推广经理', 5);
 INSERT INTO `position` VALUES (23, '商场经理', 5);
+INSERT INTO `position` VALUES (24, '研发总监', 6);
 
 -- ----------------------------
 -- Table structure for salary
@@ -336,7 +359,7 @@ CREATE TABLE `salary`  (
   `accumulationFundPer` double NULL DEFAULT NULL COMMENT '公积金比率',
   `name` varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '工资账套' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '工资账套' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of salary
@@ -358,12 +381,12 @@ CREATE TABLE `user`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `UK_kpubos9gc2cvtkb0thktkbkes`(`email`) USING BTREE,
   UNIQUE INDEX `username`(`username`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '系统用户' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci COMMENT = '系统用户' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'admin', '123456', 'admin@163.com', 1);
-INSERT INTO `user` VALUES (2, 'lmj', '123456', 'lmj@163.com', 0);
+INSERT INTO `user` VALUES (4, '2021HLJ', '123456', '2021hlj@163.com', 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
