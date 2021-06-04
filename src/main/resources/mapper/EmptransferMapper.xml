@@ -6,4 +6,8 @@
     <select id="getAllEmptransfer" resultType="com.ncu.hrms.bean.Emptransfer">
         select * from emptransfer
     </select>
+
+    <delete id="deleteEmptransfer" parameterType="java.lang.Integer" >
+        delete from emptransfer where id=#{id}
+    </delete>
 </mapper>

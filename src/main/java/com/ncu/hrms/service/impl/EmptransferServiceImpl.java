@@ -24,4 +24,9 @@ public class EmptransferServiceImpl implements EmptransferService {
     public int addEmptransfer(Emptransfer emptransfer) {
         return emptransferMapper.addEmptransfer(emptransfer);
     }
+
+    @Override
+    public int deleteEmptransfer(Integer id) {
+        return emptransferMapper.deleteEmptransfer(id);
+    }
 }

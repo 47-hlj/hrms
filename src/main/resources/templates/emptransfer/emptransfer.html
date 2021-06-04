@@ -63,6 +63,7 @@
                         <th>职位</th>
                         <th>日期</th>
                         <th>原因</th>
+                        <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -73,6 +74,10 @@
                         <td>[[${emptransfer.position}]]</td>
                         <td>[[${#dates.format(emptransfer.date, 'yyyy-MM-dd')}]]</td>
                         <td>[[${emptransfer.reason}]]</td>
+                        <td>
+                            <button th:attr="del_uri=@{/emptransfer/}+${emptransfer.id}" class="btn btn-sm btn-danger deleteBtn">删除</button>
+                        </td>
+
                     </tr>
                     </tbody>
                 </table>
@@ -90,6 +95,9 @@
                 </ul>
             </div>
         </main>
+        <form id="deleteEmptransferForm" method="post">
+            <input type="hidden" name="_method" value="delete"/>
+        </form>
     </div>
 </div>
 
@@ -99,5 +107,12 @@
 <script type="text/javascript" th:src="@{/webjars/jquery/3.5.0/jquery.js}"></script>
 <script type="text/javascript" th:src="@{/webjars/popper.js/1.14.3/popper.js}"></script>
 <script type="text/javascript" th:src="@{/webjars/bootstrap/4.4.1-1/js/bootstrap.js}"></script>
+<script>
+    $(".deleteBtn").click(function(){
+        //删除当前
+        $("#deleteEmptransferForm").attr("action",$(this).attr("del_uri")).submit();
+        return false;
+    });
+</script>
 </body>
 </html>

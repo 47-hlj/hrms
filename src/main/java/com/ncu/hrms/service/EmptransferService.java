@@ -8,4 +8,6 @@ public interface EmptransferService {
     List<Emptransfer> getAllEmptransfer();
 
     int addEmptransfer(Emptransfer emptransfer);
+
+    int deleteEmptransfer(Integer id);
 }
