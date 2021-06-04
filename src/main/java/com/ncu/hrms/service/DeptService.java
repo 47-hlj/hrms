@@ -19,4 +19,6 @@ public interface DeptService {
 
     //更新部门
     int updateDept(Dept dept);
+
+    List<Dept> query(String name);
 }

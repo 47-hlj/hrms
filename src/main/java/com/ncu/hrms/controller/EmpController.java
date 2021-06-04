@@ -125,7 +125,6 @@ public class EmpController {
         return "redirect:/emps";
     }
 
-
     // 查询某个员工
     @PostMapping("/search")//提交表单+传回前端的映射
     public String queryEmp(@RequestParam String name, Model model,@RequestParam(value="pageNum",defaultValue="1")Integer pageNum){

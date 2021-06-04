@@ -47,6 +47,7 @@
   content: "\e600";
 }
 
+
 .icon-jixiaopinggu:before {
   content: "\e75e";
 }
@@ -57,5 +58,11 @@
 
 .icon-yonghuguanli:before {
   content: "\e769";
+}
+.icon-dept:before {
+  content: "\e601";
+}
+.icon-emptransfer:before{
+  content: "\e60e";
 }
 

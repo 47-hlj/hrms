@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface SalaryMapper {
     //根据id查询
     Salary getSalaryById(Integer id);

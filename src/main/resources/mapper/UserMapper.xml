@@ -20,14 +20,16 @@
     </delete>
 
     <insert id="addUser" parameterType="com.ncu.hrms.bean.User">
-        insert into user (id, username, password)
-        values (#{id},#{username},#{password})
+        insert into user (id, username, password,email,enabled)
+        values (#{id},#{username},#{password},#{email},#{enabled})
     </insert>
 
     <update id="updateUser" parameterType="com.ncu.hrms.bean.User">
         update user
         set username = #{username},
-            password = #{password}
+            password = #{password},
+            email=#{email},
+            enabled=#{enabled}
         where id = #{id}
     </update>
 </mapper>

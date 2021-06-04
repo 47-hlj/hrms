@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface ContractMapper {
     //根据id查询合同
     Contract getContractById(Integer id);

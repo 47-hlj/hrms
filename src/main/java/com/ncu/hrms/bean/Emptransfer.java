@@ -1,29 +1,19 @@
 package com.ncu.hrms.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Emptransfer {
     private Integer id;
-    private Integer eid;
-    private Integer TDeptId;
-    private Integer TPid;
-    private Date TDate;
-    private String TReason;
-    private String remark;
-
-    public Emptransfer() {
-    }
-
-    public Emptransfer(Integer id, Integer eid, Integer TDeptId, Integer TPid, Date TDate, String TReason, String remark) {
-        this.id = id;
-        this.eid = eid;
-        this.TDeptId = TDeptId;
-        this.TPid = TPid;
-        this.TDate = TDate;
-        this.TReason = TReason;
-        this.remark = remark;
-    }
+    private String name;
+    private String dept;
+    private String position;
+    private Date date;
+    private String reason;
 }

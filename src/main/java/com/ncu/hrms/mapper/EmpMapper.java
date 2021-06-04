@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface EmpMapper {
     //根据id查询员工
     Emp getEmpById(Integer id);
@@ -32,5 +31,8 @@ public interface EmpMapper {
     int updateEmp(Emp emp);
 
     List<Emp> query(String name);
+
+    //根据部门id删除员工
+    int deleteEmpByDeptId(Integer deptId);
 
 }

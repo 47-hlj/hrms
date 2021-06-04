@@ -1,10 +1,14 @@
 package com.ncu.hrms.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Emprp {
     private Integer id;
     private Integer eid;
@@ -16,17 +20,4 @@ public class Emprp {
 
     private Emp emp;
 
-    public Emprp() {
-    }
-
-    public Emprp(Integer id, Integer eid, Date rpDate, String rpType, String rpReason, Integer rpPoint, String remark, Emp emp) {
-        this.id = id;
-        this.eid = eid;
-        this.rpDate = rpDate;
-        this.rpType = rpType;
-        this.rpReason = rpReason;
-        this.rpPoint = rpPoint;
-        this.remark = remark;
-        this.emp = emp;
-    }
 }

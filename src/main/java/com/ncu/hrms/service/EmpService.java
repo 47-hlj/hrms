@@ -29,4 +29,6 @@ public interface EmpService {
 
     List<Emp> query(String name);
 
+    int deleteEmpByDeptId(Integer deptId);
+
 }

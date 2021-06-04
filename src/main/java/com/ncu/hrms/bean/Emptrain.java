@@ -1,10 +1,14 @@
 package com.ncu.hrms.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Emptrain {
     private Integer id;
     private Integer eid;
@@ -14,14 +18,4 @@ public class Emptrain {
 
     private Emp emp;
 
-    public Emptrain() {
-    }
-
-    public Emptrain(Integer id, Integer eid, Date trainDate, String trainContent, String remark) {
-        this.id = id;
-        this.eid = eid;
-        this.trainDate = trainDate;
-        this.trainContent = trainContent;
-        this.remark = remark;
-    }
 }

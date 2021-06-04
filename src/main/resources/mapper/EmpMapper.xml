@@ -132,4 +132,8 @@
         e.workState workState, e.workID workID,e.conversionTime conversionTime,e.workAge workAge,e.notWorkDate notWorkDate, d.id did, d.name deptname,p.id pid, p.name posname
         from emp e,dept d,position p where e.deptId=d.id and e.posId=p.id and e.name = #{name}
     </select>
+    
+    <delete id="deleteEmpByDeptId">
+        delete from emp where deptId=#{deptId}
+    </delete>
 </mapper>

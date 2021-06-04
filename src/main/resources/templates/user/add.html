@@ -7,7 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="">
 
-		<title>后台管理</title>
+		<title>人力资源管理系统</title>
 		<!-- Bootstrap core CSS -->
 		<link th:href="@{/webjars/bootstrap/4.4.1-1/css/bootstrap.css}" rel="stylesheet">
 
@@ -63,8 +63,17 @@
 						</div>
 						<div class="form-group">
 							<label>密码</label>
-							<input name="password" type="text" class="form-control" placeholder="" th:value="${user!=null}?${user.password}">
+							<input name="password" type="password" class="form-control" placeholder="" th:value="${user!=null}?${user.password}">
 						</div>
+						<div class="form-group">
+							<label>邮箱</label>
+							<input name="email" type="email" class="form-control" placeholder="" th:value="${user!=null}?${user.email}">
+						</div>
+						<div class="form-group">
+							<label>权限</label>
+							<input name="enabled" type="text" class="form-control" placeholder="" th:value="${user!=null}?${user.enabled}">
+						</div>
+
 
 						<button type="submit" class="btn btn-primary" th:text="${user!=null}?'修改':'添加'">添加</button>
 					</form>

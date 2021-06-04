@@ -22,4 +22,8 @@
     <update id="updateDept" parameterType="com.ncu.hrms.bean.Dept">
         update dept set name=#{name} where id=#{id}
     </update>
+
+    <select id="query" resultType="com.ncu.hrms.bean.Dept">
+        select * from dept where name=#{name}
+    </select>
 </mapper>

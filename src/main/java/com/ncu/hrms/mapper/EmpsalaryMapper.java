@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Mapper
-@Repository
 public interface EmpsalaryMapper {
     //根据id查询员工薪水
     Empsalary getEmpsalaryById(Integer id);

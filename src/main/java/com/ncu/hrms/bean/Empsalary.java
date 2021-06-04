@@ -1,8 +1,12 @@
 package com.ncu.hrms.bean;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Empsalary {
     private Integer id;
     private Integer eid;
@@ -12,15 +16,4 @@ public class Empsalary {
     private Emp emp;
     private Salary salary;
 
-    public Empsalary() {
-    }
-
-    public Empsalary(Integer id, Integer eid, Integer sid, Double sal, Emp emp, Salary salary) {
-        this.id = id;
-        this.eid = eid;
-        this.sid = sid;
-        this.sal = sal;
-        this.emp = emp;
-        this.salary = salary;
-    }
 }

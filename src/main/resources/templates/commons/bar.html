@@ -43,6 +43,20 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link active" href="#" th:href="@{/depts}"
+                   th:class="${activeUri=='depts'?'nav-link active':'nav-link'}">
+                    <span class="iconfont icon-dept"></span>
+                    部门管理
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#" th:href="@{/emptransfers}"
+                   th:class="${activeUri=='emptransfers'?'nav-link active':'nav-link'}">
+                    <span class="iconfont icon-emptransfer"></span>
+                    员工调度
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#" th:href="@{/emprps}"
                    th:class="${activeUri=='emprps'?'nav-link active':'nav-link'}">
                     <span class="iconfont icon-jiangcheng"></span>
@@ -77,13 +91,13 @@
                     绩效评估
                 </a>
             </li>
-<!--            <li class="nav-item">-->
-<!--                <a class="nav-link" th:href="@{/users}"-->
-<!--                   th:class="${activeUri=='users'?'nav-link active':'nav-link'}">-->
-<!--                    <span class="iconfont icon-yonghuguanli"></span>-->
-<!--                    用户管理-->
-<!--                </a>-->
-<!--            </li>-->
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/users}"
+                   th:class="${activeUri=='users'?'nav-link active':'nav-link'}">
+                    <span class="iconfont icon-yonghuguanli"></span>
+                    用户管理
+                </a>
+            </li>
 
         </ul>
     </div>
